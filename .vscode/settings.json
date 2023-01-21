@@ -1,0 +1,37 @@
+{
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "editor.formatOnSave": true,
+    "[javascript]": {
+        "editor.formatOnSave": true
+    },
+    "[typescript]": {
+        "editor.formatOnSave": true
+    },
+    "[javascriptreact]": {
+        "editor.formatOnSave": true
+    },
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact",
+        "typescript": "typescriptreact"
+    },
+    "files.associations": {
+        "*.react.js": "javascriptreact",
+        "*.jsx": "javascriptreact",
+        "*.js": "javascriptreact",
+        "*.tsx": "typescriptreact",
+        "*.ts": "typescriptreact"
+    },
+    "cSpell.words": [],
+    "files.eol": "\n",
+    "git.ignoreLimitWarning": true,
+    "files.exclude": {
+        "**/node_modules": true
+    },
+    "search.exclude": {
+        "**/node_modules": true
+    },
+    "editor.wordWrap": "on",
+    "explorer.compactFolders": false
+}
