@@ -10,9 +10,11 @@ datasource db {
 }
 
 model todo {
-  id         String   @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
-  created_at DateTime @default(dbgenerated("(now() AT TIME ZONE 'utc'::text)"))
-  updated_at DateTime @default(dbgenerated("(now() AT TIME ZONE 'utc'::text)"))
-  author     String   @db.Uuid
-  text       String
+  id          String   @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  created_at  DateTime @default(dbgenerated("(now() AT TIME ZONE 'utc'::text)"))
+  updated_at  DateTime @default(dbgenerated("(now() AT TIME ZONE 'utc'::text)"))
+  author      String   @db.Uuid
+  text        String
+  isCompleted Boolean  @default(false)
+  isDeleted   Boolean  @default(false)
 }

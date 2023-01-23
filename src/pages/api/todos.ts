@@ -34,10 +34,33 @@ export default async function handler(
             }
         case 'DELETE':
             try {
-                //
-                return null;
+                const deletedTodo = await prisma.todo.delete({
+                    where: {
+                        id: req.body.id,
+                    },
+                });
+                return res.status(200).json(deletedTodo);
             } catch (error) {
-                //
+                console.error(error);
+                return res.status(500).send({
+                    error: error || 'An issue occured while getting todos',
+                });
+            }
+        case 'PATCH':
+            try {
+                const updatedTodo = await prisma.todo.update({
+                    where: {
+                        id: req.body.id,
+                    },
+                    data: req.body,
+                });
+
+                return res.status(200).json(updatedTodo);
+            } catch (error) {
+                console.error(error);
+                return res.status(500).send({
+                    error: error || 'An issue occured while getting todos',
+                });
             }
         default:
             res.setHeader('Allow', ['GET', 'POST', 'DELETE']);

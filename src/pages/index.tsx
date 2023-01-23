@@ -35,7 +35,7 @@ export default function Home() {
             </Head>
             <main className="h-screen overflow-hidden">
                 <div className="w-full max-w-4xl mx-auto h-full flex flex-col relative">
-                    <div className="p-6 sticky top-0 left-0 z-50 bg-white">
+                    <div className="pt-6 px-6 pb-2 sticky top-0 left-0 z-50 bg-white">
                         <h1 className="text-3xl text-gray-700">Listly</h1>
                     </div>
                     {user ? (

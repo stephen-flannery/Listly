@@ -4,4 +4,6 @@ export interface TodoType {
     updated_at: string;
     author: string;
     text: string;
+    isCompleted: boolean;
+    isDeleted?: boolean;
 }
