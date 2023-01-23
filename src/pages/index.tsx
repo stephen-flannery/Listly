@@ -3,7 +3,6 @@ import { createServerSupabaseClient } from '@supabase/auth-helpers-nextjs';
 import { GetServerSideProps } from 'next';
 import { FormEvent, useState } from 'react';
 import { useSupabaseClient, useUser } from '@supabase/auth-helpers-react';
-import { useRouter } from 'next/router';
 import { Todos } from '@features/todos';
 
 export default function Home() {

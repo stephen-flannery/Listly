@@ -4,9 +4,6 @@ import {
     PencilSquareIcon,
     TrashIcon,
 } from '@heroicons/react/24/outline';
-import { useMutation, useQueryClient } from '@tanstack/react-query';
-import axios from 'axios';
-import { useState } from 'react';
 import { TodoType } from 'types';
 import * as Tooltip from '@radix-ui/react-tooltip';
 
@@ -25,8 +22,6 @@ export function TodosControls({
     handleDone,
     handleDelete,
 }: Props) {
-    const queryClient = useQueryClient();
-
     return (
         <div className="relative flex items-center gap-2">
             <Tooltip.Provider delayDuration={150}>
