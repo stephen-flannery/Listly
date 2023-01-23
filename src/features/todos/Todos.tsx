@@ -1,10 +1,9 @@
 import { useUser } from '@supabase/auth-helpers-react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { TodoType } from 'types';
 import { TodosAdd } from './TodosAdd';
-import { TodosControls } from './TodosControls';
 import { TodosToolbar } from './TodosToolbar';
 import useTodos from './useTodos';
 import { useAutoAnimate } from '@formkit/auto-animate/react';
@@ -15,7 +14,6 @@ export function Todos() {
     const user = useUser();
     const [selectedTodos, setSelectedTodos] = useState<string[]>([]);
     const [isDeleting, setIsDeleting] = useState(false);
-    // const parent = useRef(null);
     const [parent] = useAutoAnimate<HTMLUListElement>();
     const [isUpdating, setIsUpdating] = useState(false);
     const [updatingTodos, setUpdatingTodos] = useState<string[]>([]);
@@ -49,12 +47,12 @@ export function Todos() {
         if (!selectedTodos?.length) return setSelectedOnlyCompletedTodos(false);
 
         const detailedSelectedTodos = todos.filter((todo: TodoType) =>
-            selectedTodos.includes(todo.id)
+            selectedTodos.includes(todo.id),
         );
 
         const incompletedTodos = detailedSelectedTodos.filter(
             (detailedSelectedTodo: TodoType) =>
-                detailedSelectedTodo.isCompleted === false
+                detailedSelectedTodo.isCompleted === false,
         );
 
         const hasIncompletedTodos = incompletedTodos?.length > 0;
@@ -285,11 +283,11 @@ export function Todos() {
                                             <TodosItem
                                                 todo={todo}
                                                 isChecked={selectedTodos.includes(
-                                                    todo.id
+                                                    todo.id,
                                                 )}
                                                 handleSelected={handleSelected}
                                                 isUpdatingProp={updatingTodos.includes(
-                                                    todo.id
+                                                    todo.id,
                                                 )}
                                             />
                                         </li>
@@ -303,11 +301,11 @@ export function Todos() {
                                             <TodosItem
                                                 todo={todo}
                                                 isChecked={selectedTodos.includes(
-                                                    todo.id
+                                                    todo.id,
                                                 )}
                                                 handleSelected={handleSelected}
                                                 isUpdatingProp={updatingTodos.includes(
-                                                    todo.id
+                                                    todo.id,
                                                 )}
                                             />
                                         </li>

@@ -6,7 +6,7 @@ const prisma = new PrismaClient();
 
 export default async function handler(
     req: NextApiRequest,
-    res: NextApiResponse
+    res: NextApiResponse,
 ) {
     const { method } = req;
 
@@ -63,7 +63,7 @@ export default async function handler(
                 });
             }
         default:
-            res.setHeader('Allow', ['GET', 'POST', 'DELETE']);
+            res.setHeader('Allow', ['GET', 'POST', 'DELETE', 'PATCH']);
             res.status(405).end(`Method ${method} Not Allowed`);
             break;
     }

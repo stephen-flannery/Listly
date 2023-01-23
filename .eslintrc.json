@@ -1,3 +1,18 @@
 {
-  "extends": "next/core-web-vitals"
+    "plugins": ["@typescript-eslint"],
+    "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+    "rules": {
+        "prettier/prettier": "error",
+        "react/prop-types": 0
+    },
+    "parser": "babel-eslint",
+    "env": {
+        "browser": true
+    },
+    "settings": {
+        "react": {
+            "pragma": "React",
+            "version": "detect"
+        }
+    }
 }

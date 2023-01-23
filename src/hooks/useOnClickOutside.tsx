@@ -2,7 +2,7 @@ import { MutableRefObject, useEffect } from 'react';
 
 export default function useOnClickOutside(
     ref: MutableRefObject<any | null>,
-    handler: (event: Event) => void
+    handler: (event: Event) => void,
 ) {
     useEffect(
         () => {
@@ -26,6 +26,6 @@ export default function useOnClickOutside(
         // ... callback/cleanup to run every render. It's not a big deal ...
         // ... but to optimize you can wrap handler in useCallback before ...
         // ... passing it into this hook.
-        [ref, handler]
+        [ref, handler],
     );
 }
